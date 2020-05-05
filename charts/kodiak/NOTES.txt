@@ -1,0 +1,5 @@
+
+The chart {{ .Chart.Name }} has been released under the name {{ .Release.Name }}.
+
+Read the Kodiak quick start guide https://kodiakhq.com/docs/quickstart.
+
