@@ -33,7 +33,7 @@ this Github repository.
 Then you are ready to deploy:
 
 ```bash
-$ helm install --name kodiak --f my-values.yaml kodiak
+$ helm install --name kodiak --f my-values.yaml fikaworks/kodiak
 ```
 
 Note: you can use an external Redis instance by setting `redisUrl` and
