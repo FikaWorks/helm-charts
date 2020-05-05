@@ -38,3 +38,4 @@ $ helm install --name kodiak --f my-values.yaml kodiak
 
 Note: you can use an external Redis instance by setting `redisUrl` and
 `redis.enabled: false`, Kodiak require Redis version 5 or higher.
+
