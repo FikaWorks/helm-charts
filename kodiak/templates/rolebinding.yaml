@@ -1,0 +1,15 @@
+{{- if .Values.podSecurityPolicy.create }}
+apiVersion: rbac.authorization.k8s.io/v1beta1
+kind: RoleBinding
+metadata:
+  name: {{ include "kodiak.fullname" . }}
+  labels:
+    {{- include "kodiak.labels" . | nindent 4 }}
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: {{ template "kodiak.fullname" . }}
+subjects:
+  - kind: ServiceAccount
+    name: {{ template "kodiak.serviceAccountName" . }}
+{{- end -}}
