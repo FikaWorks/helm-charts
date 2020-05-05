@@ -1,0 +1,19 @@
+apiVersion: v1
+entries:
+  kodiak:
+  - apiVersion: v2
+    appVersion: 0.20.0
+    created: "2020-05-05T17:25:53.446167646Z"
+    dependencies:
+    - condition: redis.enabled
+      name: redis
+      repository: https://charts.bitnami.com/bitnami/
+      version: 10.6.12
+    description: Self hosted Kodiak
+    digest: c6f079f8d13f624580a4b6ef6a1d440ea2b374a665a661a24721ae08f17c02e7
+    name: kodiak
+    type: application
+    urls:
+    - https://github.com/FikaWorks/helm-charts/releases/download/kodiak-0.1.0/kodiak-0.1.0.tgz
+    version: 0.1.0
+generated: "2020-05-05T17:25:53.346723029Z"
