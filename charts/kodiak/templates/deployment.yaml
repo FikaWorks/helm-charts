@@ -30,6 +30,10 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           env:
+            - name: REDIS_POOL_SIZE
+              value: {{ .Values.redisPoolSize | quote }}
+            - name: LOGGING_LEVEL
+              value: {{ .Values.loggingLevel }}
             - name: SECRET_KEY
               valueFrom:
                 secretKeyRef:
