@@ -26,6 +26,9 @@ githubAppName: ""
 ## the redis URL below
 redisUrl:
 
+redisPoolSize: 20
+loggingLevel: INFO
+
 serviceAccount:
   # Specifies whether a service account should be created
   create: true
