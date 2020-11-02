@@ -7,7 +7,7 @@ replicaCount: 1
 image:
   repository: cdignam/kodiak
   pullPolicy: IfNotPresent
-  tag: v0.30.0
+  tag: v0.32.0
 
 imagePullSecrets: []
 nameOverride: ""
@@ -21,6 +21,9 @@ githubAppName: ""
 #   -----BEGIN RSA PRIVATE KEY-----
 #   .....
 #   -----END RSA PRIVATE KEY-----
+
+## Sentry DSN to report any errors Kodiak encounters
+sentryDSN:
 
 ## If using external redis instance, set redis.enabled to false and write define
 ## the redis URL below
