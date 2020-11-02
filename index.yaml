@@ -3,6 +3,34 @@ entries:
   kodiak:
   - apiVersion: v2
     appVersion: 0.32.0
+    created: "2020-11-02T10:52:17.18991762Z"
+    dependencies:
+    - condition: redis.enabled
+      name: redis
+      repository: https://charts.bitnami.com/bitnami/
+      version: 10.6.12
+    description: Self hosted Kodiak, a bot to automatically update and merge GitHub
+      PRs
+    digest: f5ce5b06ac13f471f7275fce6883a3365ea3d31625b58d3dea9d4818c9277425
+    home: https://kodiakhq.com
+    icon: https://raw.githubusercontent.com/chdsbd/kodiak/v0.20.0/assets/logo.png
+    keywords:
+    - bot
+    - github
+    maintainers:
+    - email: etienne.tremel@fika.works
+      name: etiennetremel
+    name: kodiak
+    sources:
+    - https://kodiakhq.com
+    - https://github.com/chdsbd/kodiak
+    - https://hub.docker.com/r/cdignam/kodiak
+    type: application
+    urls:
+    - https://github.com/FikaWorks/helm-charts/releases/download/kodiak-0.3.1/kodiak-0.3.1.tgz
+    version: 0.3.1
+  - apiVersion: v2
+    appVersion: 0.32.0
     created: "2020-11-02T09:22:20.007791661Z"
     dependencies:
     - condition: redis.enabled
