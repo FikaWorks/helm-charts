@@ -23,7 +23,7 @@ githubAppName: ""
 #   -----END RSA PRIVATE KEY-----
 
 ## Sentry DSN to report any errors Kodiak encounters
-sentryDSN:
+# sentryDSN:
 
 ## If using external redis instance, set redis.enabled to false and write define
 ## the redis URL below

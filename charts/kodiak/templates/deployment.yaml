@@ -56,11 +56,13 @@ spec:
                 secretKeyRef:
                   name: {{ include "kodiak.fullname" . }}
                   key: redis-url
+            {{- if .Values.sentryDSN }}
             - name: SENTRY_DSN
               valueFrom:
                 secretKeyRef:
                   name: {{ include "kodiak.fullname" . }}
                   key: sentry-dsn
+            {{- end }}
             - name: PORT
               value: "3000"
           ports:
