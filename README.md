@@ -12,5 +12,5 @@ $ helm repo add fikaworks https://fikaworks.github.io/helm-charts
 
 $ helm search repo fikaworks
 NAME                    CHART VERSION   APP VERSION     DESCRIPTION
-fikaworks/kodiak        0.3.3           0.35.0          Self hosted Kodiak
+fikaworks/kodiak        0.4.0           0.37.0          Self hosted Kodiak
 ```
