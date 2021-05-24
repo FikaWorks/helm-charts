@@ -1,0 +1,5 @@
+
+The chart {{ .Chart.Name }} has been released under the name {{ .Release.Name }}.
+
+Read the GRGate quick start guide https://github.com/FikaWorks/grgate.
+
