@@ -1,0 +1,140 @@
+# Default values for GRGate.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 1
+
+image:
+  repository: fikaworks/grgate
+  pullPolicy: IfNotPresent
+  tag: v0.1.0
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+# githubPrivateKey: |-
+#   -----BEGIN RSA PRIVATE KEY-----
+#   .....
+#   -----END RSA PRIVATE KEY-----
+
+config:
+  # global configuration, this is the default and can be overriden from the
+  # config defined in the repository
+  globals:
+    enabled: true
+
+    # filter release by tag, the tag associated to the draft/unpublished releases
+    # must match the regular expression defined by tagRegexp, default: .*
+    tagRegexp: .*
+
+    # list of statuses, default: []
+    statuses:
+      - e2e happy flow
+
+  # server configuration (webhook)
+  # webhook should be sent to /<provider>/webhook, where provider is either
+  # github or gitlab
+  server:
+    listenAddress: 0.0.0.0:8080
+    metricsAddress: 0.0.0.0:9101
+    probeAddress: 0.0.0.0:8086
+    webhookSecret: a-random-string
+
+  # number of workers to run, default: 1
+  workers: 1
+
+  # platform to use
+  platform: github # github|gitlab, default: github
+
+  # Github configuration
+  # when creating the Github app, make sure to set the following permissions:
+  #   - Administration read/write
+  #   - Checks read/write
+  #   - Contents read/write
+  #   - Metadata read-only
+  #   - Commit statuses read/write
+  #
+  # subscribe to the following webhook events:
+  #   - Check runs
+  #   - Check suites
+  #   - Releases
+  #   - Statuses
+  github:
+    appID: 000000
+    installationID: 00000000
+    privateKeyPath: /etc/grgate/github.private-key.pem
+
+  # Gitlab configuration
+  # when creating the Gitlab token, make sure to set the following permissions:
+  #   - read_repository
+  # subscribe to the following webhook events:
+  #   - Release events
+  #   - Pipeline events
+  gitlab:
+    token: gitlab-token
+
+  # configuration can be overriden in the repository itself, you can define the
+  # default path below, default: .grgate.yaml
+  repoConfigPath: .grgate.yaml
+
+  logLevel: info  # trace|debug|info|warn|error|fatal|panic, default: info
+  logFormat: json # json|pretty, default: pretty
+
+serviceAccount:
+  # Specifies whether a service account should be created
+  create: true
+  # Annotations to add to the service account
+  annotations: {}
+  # The name of the service account to use.
+  # If not set and create is true, a name is generated using the fullname template
+  name: ""
+
+podAnnotations: {}
+
+# Enable pod security policy
+# https://kubernetes.io/docs/concepts/policy/pod-security-policy/
+podSecurityPolicy:
+  create: true
+
+service:
+  type: ClusterIP
+  port: 80
+
+ingress:
+  enabled: false
+  annotations: {}
+    # kubernetes.io/ingress.class: nginx
+    # kubernetes.io/tls-acme: "true"
+  hosts:
+    - host: chart-example.local
+      paths: []
+  tls: []
+  #  - secretName: chart-example-tls
+  #    hosts:
+  #      - chart-example.local
+
+resources: {}
+  # We usually recommend not to specify default resources and to leave this as a conscious
+  # choice for the user. This also increases chances charts run on environments with little
+  # resources, such as Minikube. If you do want to specify resources, uncomment the following
+  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+  # limits:
+  #   cpu: 100m
+  #   memory: 128Mi
+  # requests:
+  #   cpu: 100m
+  #   memory: 128Mi
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 100
+  targetCPUUtilizationPercentage: 80
+  # targetMemoryUtilizationPercentage: 80
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
