@@ -21,7 +21,8 @@ githubAppName: ""
 #   -----BEGIN RSA PRIVATE KEY-----
 #   .....
 #   -----END RSA PRIVATE KEY-----
-
+# githubV3ApiRoot: "http(s)://[hostname]/api/v3"
+# githubV4ApiRoot: "http(s)://[hostname]/api/graphql"
 ## Sentry DSN to report any errors Kodiak encounters
 # sentryDSN:
 
