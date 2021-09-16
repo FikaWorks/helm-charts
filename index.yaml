@@ -3,6 +3,28 @@ entries:
   grgate:
   - apiVersion: v2
     appVersion: 0.1.1
+    created: "2021-09-16T13:46:47.285010445Z"
+    description: A git release gate utility which autopublish draft/unpublished releases
+      based on commit status (aka checks)
+    digest: b08e8f6434af5a3dec4e5f75dd1b181e9b325ce98a1cec8c1301af7a345f6651
+    home: https://github.com/FikaWorks/grgate/
+    keywords:
+    - gitlab
+    - github
+    - continuous-deployment
+    maintainers:
+    - email: etienne.tremel@fika.works
+      name: etiennetremel
+    name: grgate
+    sources:
+    - https://github.com/FikaWorks/grgate/
+    - https://hub.docker.com/r/fikaworks/grgate
+    type: application
+    urls:
+    - https://github.com/FikaWorks/helm-charts/releases/download/grgate-0.1.1/grgate-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
+    appVersion: 0.1.1
     created: "2021-05-24T13:55:25.596660695Z"
     description: A git release gate utility which autopublish draft/unpublished releases
       based on commit status (aka checks)
@@ -24,6 +46,34 @@ entries:
     - https://github.com/FikaWorks/helm-charts/releases/download/grgate-0.1.0/grgate-0.1.0.tgz
     version: 0.1.0
   kodiak:
+  - apiVersion: v2
+    appVersion: 0.44.0
+    created: "2021-09-16T13:46:47.379545834Z"
+    dependencies:
+    - condition: redis.enabled
+      name: redis
+      repository: https://charts.bitnami.com/bitnami/
+      version: 10.6.12
+    description: Self hosted Kodiak, a bot to automatically update and merge GitHub
+      PRs
+    digest: dca6d4dcc276090bd83748d30d0ef72bd404368921fb0bacc59fe62ac92a86dd
+    home: https://kodiakhq.com
+    icon: https://raw.githubusercontent.com/chdsbd/kodiak/v0.20.0/assets/logo.png
+    keywords:
+    - bot
+    - github
+    maintainers:
+    - email: etienne.tremel@fika.works
+      name: etiennetremel
+    name: kodiak
+    sources:
+    - https://kodiakhq.com
+    - https://github.com/chdsbd/kodiak
+    - https://hub.docker.com/r/cdignam/kodiak
+    type: application
+    urls:
+    - https://github.com/FikaWorks/helm-charts/releases/download/kodiak-0.5.5/kodiak-0.5.5.tgz
+    version: 0.5.5
   - apiVersion: v2
     appVersion: 0.44.0
     created: "2021-09-10T12:50:47.239628404Z"
