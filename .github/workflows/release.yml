@@ -30,3 +30,4 @@ jobs:
           CR_TOKEN: "${{ secrets.CR_TOKEN }}"
         with:
           charts_dir: charts
+          charts_repo_url: https://fikaworks.github.io/helm-charts
