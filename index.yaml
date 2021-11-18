@@ -3,6 +3,29 @@ entries:
   grgate:
   - apiVersion: v2
     appVersion: 0.1.5
+    created: "2021-11-18T07:35:43.996331678Z"
+    description: A git release gate utility which autopublish draft/unpublished releases
+      based on commit status (aka checks)
+    digest: 67c14093af4e80dcfdf5b036e4c8e7d564fb588f63b69d4f33226631ce839011
+    home: https://github.com/FikaWorks/grgate/
+    keywords:
+    - gitlab
+    - github
+    - gitops
+    - continuous-deployment
+    maintainers:
+    - email: etienne.tremel@fika.works
+      name: etiennetremel
+    name: grgate
+    sources:
+    - https://github.com/FikaWorks/grgate/
+    - https://hub.docker.com/r/fikaworks/grgate
+    type: application
+    urls:
+    - https://github.com/FikaWorks/helm-charts/releases/download/grgate-0.1.4/grgate-0.1.4.tgz
+    version: 0.1.4
+  - apiVersion: v2
+    appVersion: 0.1.5
     created: "2021-11-15T18:58:38.087231955Z"
     description: A git release gate utility which autopublish draft/unpublished releases
       based on commit status (aka checks)
@@ -90,6 +113,35 @@ entries:
     - https://github.com/FikaWorks/helm-charts/releases/download/grgate-0.1.0/grgate-0.1.0.tgz
     version: 0.1.0
   kodiak:
+  - apiVersion: v2
+    appVersion: 0.47.1
+    created: "2021-11-18T07:35:44.11971816Z"
+    dependencies:
+    - condition: redis.enabled
+      name: redis
+      repository: https://charts.bitnami.com/bitnami
+      version: 15.5.5
+    description: Self hosted Kodiak, a bot to automatically update and merge GitHub
+      PRs
+    digest: b77a1c45983b274d65e77f7cc6d89c5fb866342f1ea0cc3472342d7fc61bb673
+    home: https://kodiakhq.com
+    icon: https://raw.githubusercontent.com/chdsbd/kodiak/v0.20.0/assets/logo.png
+    keywords:
+    - bot
+    - github
+    - mergebot
+    maintainers:
+    - email: etienne.tremel@fika.works
+      name: etiennetremel
+    name: kodiak
+    sources:
+    - https://kodiakhq.com
+    - https://github.com/chdsbd/kodiak
+    - https://hub.docker.com/r/cdignam/kodiak
+    type: application
+    urls:
+    - https://github.com/FikaWorks/helm-charts/releases/download/kodiak-1.0.0/kodiak-1.0.0.tgz
+    version: 1.0.0
   - apiVersion: v2
     appVersion: 0.47.0
     created: "2021-11-15T18:58:38.199674267Z"
@@ -553,4 +605,4 @@ entries:
     urls:
     - https://github.com/FikaWorks/helm-charts/releases/download/kodiak-0.1.0/kodiak-0.1.0.tgz
     version: 0.1.0
-generated: "2021-11-15T18:58:38.199840468Z"
+generated: "2021-11-18T07:35:44.121175674Z"
