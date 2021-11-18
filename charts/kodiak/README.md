@@ -39,3 +39,27 @@ $ helm install --name kodiak --f my-values.yaml fikaworks/kodiak
 Note: you can use an external Redis instance by setting `redisUrl` and
 `redis.enabled: false`, Kodiak require Redis version 5 or higher.
 
+
+## Upgrades
+
+### v0.x to v1.x
+
+Following the up-coming deprecatred of `podSecurityPolicy` in Kubernetes, the
+podSecurityPolicy has been disabled by default, you can re-enable it by setting
+the following:
+```
+podSecurityPolicy:
+  create: true
+
+# if using Redis
+redis:
+  enabled: true
+  podSecurityPolicy:
+    create: true
+    enabled: true
+```
+
+The Redis chart was upgraded from 10.6.12 to 15.5.5, as Kodiak is only
+compatible with Redis 5, the image is hardcodeed to `5.0-debian-10`.
+The `redis.password` field was moved to `redis.auth.password`. Make sure to
+update this field with your existing password before upgrading.

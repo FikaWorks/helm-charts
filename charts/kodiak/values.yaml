@@ -47,7 +47,7 @@ podAnnotations: {}
 # Enable pod security policy
 # https://kubernetes.io/docs/concepts/policy/pod-security-policy/
 podSecurityPolicy:
-  create: true
+  create: false
 
 service:
   type: ClusterIP
