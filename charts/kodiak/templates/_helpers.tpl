@@ -67,7 +67,7 @@ Create the redis url for Kodiak to use
 */}}
 {{- define "kodiak.redisUrl" -}}
 {{- if and .Values.redis.enabled (empty .Values.redisUrl) }}
-{{- printf "redis://:%s@%s-redis-master:%.0f" .Values.redis.password .Release.Name .Values.redis.master.service.port }}
+{{- printf "redis://:%s@%s-redis-master:%.0f" .Values.redis.auth.password .Release.Name .Values.redis.master.service.port }}
 {{- else }}
 {{- .Values.redisUrl }}
 {{- end }}

@@ -7,7 +7,7 @@ replicaCount: 1
 image:
   repository: cdignam/kodiak
   pullPolicy: IfNotPresent
-  tag: v0.47.0
+  tag: v0.47.1
 
 imagePullSecrets: []
 nameOverride: ""
@@ -124,23 +124,14 @@ redis:
   ## Set to false if bringing your own redis.
   enabled: true
 
-  ## Use password authentication
-  usePassword: true
-  ## Redis password (both master and slave)
-  password: aSecretPassword
+  image:
+    tag: 5.0-debian-10
 
-  serviceAccount:
-    ## Specifies whether a ServiceAccount should be created
-    ##
-    create: true
+  auth:
+    ## Redis password (both master and slave)
+    password: aSecretPassword
 
   rbac:
     ## Specifies whether RBAC resources should be created
     ##
     create: true
-
-  podSecurityPolicy:
-    ## Specifies whether a PodSecurityPolicy should be created
-    ##
-    create: true
-
