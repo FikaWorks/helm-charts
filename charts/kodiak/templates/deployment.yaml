@@ -71,12 +71,12 @@ spec:
                   name: {{ include "kodiak.fullname" . }}
                   key: github-v3-api-root
             {{- end }}
-            {{- if .Values.githubV4ApiRoot }}
-            - name: GITHUB_V4_API_ROOT
+            {{- if .Values.githubV4ApiUrl }}
+            - name: GITHUB_V4_API_URL
               valueFrom:
                 secretKeyRef:
                   name: {{ include "kodiak.fullname" . }}
-                  key: github-v4-api-root
+                  key: github-v4-api-url
             {{- end }}
             - name: PORT
               value: "3000"
