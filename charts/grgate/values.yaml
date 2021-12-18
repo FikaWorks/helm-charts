@@ -7,7 +7,7 @@ replicaCount: 1
 image:
   repository: fikaworks/grgate
   pullPolicy: IfNotPresent
-  tag: v0.1.5
+  tag: v0.2.0
 
 imagePullSecrets: []
 nameOverride: ""
@@ -31,6 +31,20 @@ config:
     # list of statuses, default: []
     statuses:
       - e2e happy flow
+
+    # append statuses to release note
+    releaseNote:
+      enabled: true
+      template: |-
+        {{- .ReleaseNote -}}
+        <!-- GRGate start -->
+        <details><summary>Status check</summary>
+        {{ range .Statuses }}
+        - [{{ if or (eq .Status "completed" ) (eq .Status "success") }}x{{ else }} {{ end }}] {{ .Name }}
+        {{- end }}
+
+        </details>
+        <!-- GRGate end -->
 
   # server configuration (webhook)
   # webhook should be sent to /<provider>/webhook, where provider is either
