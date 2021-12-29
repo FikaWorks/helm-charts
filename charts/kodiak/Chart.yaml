@@ -11,7 +11,7 @@ type: application
 # This is the chart version. This version number should be incremented each time you make changes
 # to the chart and its templates, including the app version.
 # Versions are expected to follow Semantic Versioning (https://semver.org/)
-version: 1.1.1
+version: 1.1.2
 
 # This is the version number of the application being deployed. This version number should be
 # incremented each time you make changes to the application. Versions are not expected to
@@ -35,3 +35,12 @@ dependencies:
 maintainers:
   - name: etiennetremel
     email: etienne.tremel@fika.works
+
+annotations:
+  # Use this annotation to indicate that this chart version is a pre-release.
+  # https://artifacthub.io/docs/topics/annotations/helm/
+  artifacthub.io/prerelease: "false"
+  # List of changes for the release in artifacthub.io
+  # https://artifacthub.io/packages/helm/fikaworks/kodiak?modal=changelog
+  artifacthub.io/changes: |
+    - upgrade role/rolebinding apiVersion and keep backward compatibility
