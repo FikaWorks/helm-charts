@@ -7,7 +7,7 @@ replicaCount: 1
 image:
   repository: fikaworks/grgate
   pullPolicy: IfNotPresent
-  tag: v0.2.1
+  tag: v0.3.0
 
 imagePullSecrets: []
 nameOverride: ""
@@ -31,6 +31,23 @@ config:
     # list of statuses, default: []
     statuses:
       - e2e happy flow
+
+    # display issue dashboard, GRGate create an issue in the repository and
+    # provide feedback when mis-configuration or other issues are detected
+    dashboard:
+      enabled: true
+      author: GRGate[bot]
+      title: GRGate dashboard
+      template: |-
+        GRGate is {{ if .Enabled }}enabled
+        {{- else }}disabled{{ end }} for this repository.
+        {{- if .Errors }}
+
+        Incorrect configuration detected with the following error(s):
+        {{- range .Errors }}
+        - {{ . }}
+        {{- end }}
+        {{- end }}
 
     # append statuses to release note
     releaseNote:
