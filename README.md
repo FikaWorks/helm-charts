@@ -13,5 +13,5 @@ $ helm repo add fikaworks https://fikaworks.github.io/helm-charts
 $ helm search repo fikaworks
 NAME                    CHART VERSION   APP VERSION     DESCRIPTION
 fikaworks/kodiak        1.1.3           0.50.0          Self hosted Kodiak
-fikaworks/grgate        0.3.0           0.3.0           GRGate, git release gate utility
+fikaworks/grgate        0.3.1           0.6.0           GRGate, git release gate utility
 ```
