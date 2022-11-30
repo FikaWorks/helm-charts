@@ -2,6 +2,29 @@ apiVersion: v1
 entries:
   grgate:
   - apiVersion: v2
+    appVersion: 0.6.0
+    created: "2022-11-30T07:57:41.197794629Z"
+    description: A git release gate utility which autopublish draft/unpublished releases
+      based on commit status (aka checks)
+    digest: 2c7b175e7c08ffa11d480521129317cec5ccb058543cdc0452a3c55e90a42d4a
+    home: https://github.com/FikaWorks/grgate/
+    keywords:
+    - gitlab
+    - github
+    - gitops
+    - continuous-deployment
+    maintainers:
+    - email: etienne.tremel@fika.works
+      name: etiennetremel
+    name: grgate
+    sources:
+    - https://github.com/FikaWorks/grgate/
+    - https://hub.docker.com/r/fikaworks/grgate
+    type: application
+    urls:
+    - https://github.com/FikaWorks/helm-charts/releases/download/grgate-0.3.1/grgate-0.3.1.tgz
+    version: 0.3.1
+  - apiVersion: v2
     appVersion: 0.3.0
     created: "2022-04-06T08:47:15.29409761Z"
     description: A git release gate utility which autopublish draft/unpublished releases
@@ -827,4 +850,4 @@ entries:
     urls:
     - https://github.com/FikaWorks/helm-charts/releases/download/kodiak-0.1.0/kodiak-0.1.0.tgz
     version: 0.1.0
-generated: "2022-04-06T08:47:15.424116314Z"
+generated: "2022-11-30T07:57:41.198028832Z"
