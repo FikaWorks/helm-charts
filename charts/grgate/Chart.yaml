@@ -19,8 +19,8 @@ version: 0.3.2
 # follow Semantic Versioning. They should reflect the version the application is using.
 appVersion: 0.6.1
 
-home: https://github.com/FikaWorks/grgate/
-# icon:
+home: https://grgate.dev
+icon: https://raw.githubusercontent.com/FikaWorks/grgate/v0.6.1/.github/grgate-logo-300x300.png
 
 sources:
   - https://github.com/FikaWorks/grgate/
