@@ -5,9 +5,9 @@
 replicaCount: 1
 
 image:
-  repository: fikaworks/grgate
+  repository: ghcr.io/fikaworks/grgate
   pullPolicy: IfNotPresent
-  tag: v0.6.2
+  tag: v0.6.3
 
 imagePullSecrets: []
 nameOverride: ""
